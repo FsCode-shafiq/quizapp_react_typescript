@@ -7,9 +7,10 @@ import { categoryList } from "./TypeDefining/Types";
 import categoryProvider from "./contextAPi/context.category";
 import CategoryPage from "./categoryPage/categoryPage";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import './Main.css'
 const MainComponent = () => {
   let difficulty: string[] = ["hard", "medium", "easy"];
-  let showList: categoryList = ["1"];
+  let showList: categoryList;
   let mainList = useState<categoryList>([]);
   let hardResult: apiResult;
   let mediumResult: apiResult;
@@ -32,7 +33,8 @@ const MainComponent = () => {
     <div>
       <NavBar />
       <BrowserRouter>
-        <Routes>
+      <div className='element-render-div'>
+      <Routes>
           <Route
             path="/"
             element={
@@ -42,6 +44,7 @@ const MainComponent = () => {
             }
           />
         </Routes>
+      </div>
       </BrowserRouter>
     </div>
   );
