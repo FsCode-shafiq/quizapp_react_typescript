@@ -31,7 +31,7 @@ const CategoryPage = () => {
       }}>Select Category</h1>
       {QuizList.map((ele: string, ind: number) => {
         return (
-          <Card className={classes.root}>
+          <Card className={classes.root} key={ind}>
             <CardContent>
               <Typography variant="h5" component="h2">
                 {ele}
