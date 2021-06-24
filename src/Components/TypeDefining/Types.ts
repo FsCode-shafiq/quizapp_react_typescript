@@ -8,3 +8,5 @@ export type apiResult = [{
 }]
 
 export type categoryList = string[];
+
+export type QuizApp = apiResult[];
