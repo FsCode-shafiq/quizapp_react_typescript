@@ -1,4 +1,4 @@
-import { apiResult, QuizApp } from "../TypeDefining/Types";
+import { apiResult } from "../TypeDefining/Types";
 import { useContext } from "react";
 import QuizListProvider from "../contextAPi/Quiz.page.Context";
 import { useParams } from "react-router";
