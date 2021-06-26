@@ -3,7 +3,7 @@ import NavBar from "./App Bar/AppBar";
 import { fetchApi } from "./Services/Services";
 import { apiResult } from "./TypeDefining/Types";
 import { makingCategoryArray } from "./Services/Services";
-import { categoryList ,QuizApp } from "./TypeDefining/Types";
+import { categoryList, QuizApp } from "./TypeDefining/Types";
 import categoryProvider from "./contextAPi/context.category";
 import CategoryPage from "./categoryPage/categoryPage";
 import QuizPage from "./QuizPage/QuizPage";
@@ -18,7 +18,6 @@ const MainComponent = () => {
   let hardResult: apiResult;
   let mediumResult: apiResult;
   let easyResult: apiResult;
-  console.log(mainList);
   useEffect(() => {
     const handleAllData = async () => {
       mediumResult = await fetchApi("50", difficulty[1]);
@@ -26,14 +25,14 @@ const MainComponent = () => {
       hardResult = await fetchApi("50", difficulty[0]);
       if (difficulty[0] === "hard") {
         showList = makingCategoryArray(hardResult);
-        QuizQuesList[1](()=>[hardResult, mediumResult , easyResult]);
+        QuizQuesList[1](() => [hardResult, mediumResult, easyResult]);
         mainList[1](() => showList);
-      } 
+      }
     };
-    
+
     handleAllData();
   }, []);
-  console.log("clg",QuizQuesList);
+
   return (
     <div>
       <NavBar />
@@ -48,11 +47,14 @@ const MainComponent = () => {
                 </categoryProvider.Provider>
               }
             />
-            <Route path="/category/:id" element={
-            <QuizListProvider.Provider value={QuizQuesList[0]}>
-               <QuizPage />
-            </QuizListProvider.Provider>
-           } />
+            <Route
+              path="/category/:id"
+              element={
+                <QuizListProvider.Provider value={QuizQuesList[0]}>
+                  <QuizPage />
+                </QuizListProvider.Provider>
+              }
+            />
           </Routes>
         </div>
       </BrowserRouter>

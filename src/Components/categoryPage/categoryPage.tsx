@@ -7,6 +7,7 @@ import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
+import { Link } from "react-router-dom";
 const useStyles = makeStyles({
   root: {
     minWidth: 175,
@@ -38,7 +39,8 @@ const CategoryPage = () => {
               </Typography>
             </CardContent>
             <CardActions>
-              <Button className={classes.ButtonColor} size="small">Start Quiz</Button>
+              <Link to={`/category/${ele}`}><Button className={classes.ButtonColor} size="small">Start Quiz</Button></Link>
+              
             </CardActions>
           </Card>
         );
