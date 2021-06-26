@@ -1,10 +1,12 @@
-# Getting Started with Create React App
+### `React Quiz App Using Typescript`
+### `Introduction`
+this typescript web gather data from three different api's and manage all three api's data in a way  to show category page , Quiz Page and result Page. All api's data providing to all component through context api react hook. some touch of material UI and react bootstrap to beautify our application.
+download the code and follow steps given below:
+### `Demo Screen Shorts`
+![category](https://user-images.githubusercontent.com/69121735/123522746-c3220a00-d6d8-11eb-8c3e-8793e75629c6.png)
+![quizpage](https://user-images.githubusercontent.com/69121735/123522750-c74e2780-d6d8-11eb-86c0-29bb088cc586.png)
+![resultpage](https://user-images.githubusercontent.com/69121735/123522752-ca491800-d6d8-11eb-8b0d-78ea952b2849.png)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
 
 ### `yarn start`
 
@@ -14,33 +16,4 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
-### `yarn test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
