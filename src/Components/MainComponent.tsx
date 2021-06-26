@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import NavBar from "./App Bar/AppBar";
+import Spinner from 'react-bootstrap/Spinner'
 import { fetchApi } from "./Services/Services";
 import { apiResult } from "./TypeDefining/Types";
 import { makingCategoryArray } from "./Services/Services";
@@ -10,14 +11,16 @@ import QuizPage from "./QuizPage/QuizPage";
 import QuizListProvider from "./contextAPi/Quiz.page.Context";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./Main.css";
+import ResultPage from "./ResultPage/ResultPage";
 const MainComponent = () => {
   let difficulty: string[] = ["hard", "medium", "easy"];
   let showList: categoryList;
-  let mainList = useState<categoryList>([]);
+  let mainList = useState<categoryList>(['null']);
   let QuizQuesList = useState<QuizApp>([]);
   let hardResult: apiResult;
   let mediumResult: apiResult;
   let easyResult: apiResult;
+  console.log(mainList[0]);
   useEffect(() => {
     const handleAllData = async () => {
       mediumResult = await fetchApi("50", difficulty[1]);
@@ -37,25 +40,31 @@ const MainComponent = () => {
     <div>
       <NavBar />
       <BrowserRouter>
-        <div className="element-render-div">
-          <Routes>
-            <Route
-              path="/"
-              element={
-                <categoryProvider.Provider value={mainList[0]}>
-                  <CategoryPage />
-                </categoryProvider.Provider>
-              }
-            />
-            <Route
-              path="/category/:id"
-              element={
-                <QuizListProvider.Provider value={QuizQuesList[0]}>
-                  <QuizPage />
-                </QuizListProvider.Provider>
-              }
-            />
-          </Routes>
+        <div className="element-render-div" >
+      {mainList[0][0] === 'null' ? <div style={{ textAlign: 'center' , paddingTop: '50%' , paddingBottom: '50%'}}><Spinner animation="grow" variant="primary" /></div> :
+        <Routes>
+          <Route
+            path="/"
+            element={
+              
+              <categoryProvider.Provider value={mainList[0]}>
+                <CategoryPage />
+              </categoryProvider.Provider>
+            }
+          />
+          <Route
+            path="/category/:id"
+            element={
+              <QuizListProvider.Provider value={QuizQuesList[0]}>
+                <QuizPage />
+              </QuizListProvider.Provider>
+            }
+          />
+          <Route path='/result/:id' element={
+
+            <ResultPage/>
+          }/>
+        </Routes>}
         </div>
       </BrowserRouter>
     </div>
